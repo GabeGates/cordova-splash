@@ -22,6 +22,7 @@ settings.OLD_XCODE_PATH = argv['xcode-old'] || false;
  * @return {Promise} resolves with an array of platforms
  */
 var getPlatforms = function (projectName) {
+  if (typeof projectName === 'object') projectName = projectName._;
   var deferred = Q.defer();
   var platforms = [];
   var xcodeFolder = '/Images.xcassets/LaunchImage.launchimage/';
